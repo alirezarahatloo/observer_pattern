@@ -1,3 +1,15 @@
+
+
+/////////// Observer pattern
+/*
+Observer is a behavioral 
+design pattern that lets 
+you define a subscription 
+mechanism to notify multiple 
+objects about any events that 
+happen to the object they’re observing.
+*/ 
+
 #include <stdio.h>
 
 #define MAX_NO_OF_OBSERVERS 10u
