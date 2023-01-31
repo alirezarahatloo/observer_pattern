@@ -22,9 +22,9 @@ typedef struct
     int rainLevel;
 }t_lightingData;
 
-typedef void(*pFnctPtrObserver)(const t_lightingData lightingData);
+typedef void(*pFnctPtrObserver)(const t_lightingData lightingData);//function pointer
 
-static pFnctPtrObserver observerList[MAX_NO_OF_OBSERVERS] = {NULL};
+static pFnctPtrObserver observerList[MAX_NO_OF_OBSERVERS] = {NULL}; 
 
 void updateHeadLights(const t_lightingData newLightingData)
 {
@@ -59,7 +59,7 @@ void updateRainsensors(const t_lightingData newLightingData)
     }
 }
 
-static t_lightingData lightingData = {.lightLevel = 0u, .fogLevel = 0u, .rainLevel=0u};
+static t_lightingData lightingData = {.lightLevel = 0u, .fogLevel = 0u, .rainLevel=0u}; //global variable
 
 static void notifyLightingData(void)
 {
@@ -87,7 +87,7 @@ static void registerObserver(const pFnctPtrObserver pObserverFcnt)
         obsIdx++;
     }
     printf("registering Observer %d\n",obsIdx+1u);
-    observerList[obsIdx] = pObserverFcnt;
+    observerList[obsIdx] = pObserverFcnt;   /// function pointer is registered
 }
 static void deregisterObserver(const pFnctPtrObserver pObserverFcnt)
 {
